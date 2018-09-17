@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Висотна карта Києва</title>
+  <meta charset="utf-8" />
+  <meta name="title" content="Kyiv Hills">
+  <meta name="description" content="Карта висот Києва"/>
+  <link rel="image_src" href="pic.png"/>
+ </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+  <link rel="stylesheet" href="elevation.css" />
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+  <script>
+    $(document).ready(function () {
+      var map = L.map('map').setView([50.4471328351, 30.5173661426], 12);
+	  map.setMaxBounds([[50.0, 29.0], [51.0, 32.0]]);
+      var mytile =L.tileLayer('water/{z}/{x}/{y}.png', {
+        maxZoom: 15,
+		minZoom: 10,
+        tms: false
+      }).addTo(map);
+    })
+  </script>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="title-box">Kyiv Hills</div>
+  <div id="box">
+             <div id="legend">
+                 <table>
+                     <tbody>
+                     <tr>
+                         <td class="key color1"></td>
+                         <td class="value first">195 м</td>
+                     </tr>
+                     <tr>
+                         <td class="key color2"></td>
+                         <td class="value first">170 м</td>
+                     </tr>
+                     <tr>
+                         <td class="key color3"></td>
+                         <td class="value first">145 м</td>
+                     </tr>
+                     <tr>
+                         <td class="key color4"></td>
+                         <td class="value first">125 м</td>
+                     </tr>
+                     <tr>
+                         <td class="key color5"></td>
+                         <td class="value first">100 м</td>
+                     </tr>
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+		 <script>
+			  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			  ga('create', 'UA-55769812-4', 'auto');
+			  ga('send', 'pageview');
+		</script>
+</body>
+</html>
